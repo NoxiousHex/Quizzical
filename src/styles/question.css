@@ -1,0 +1,51 @@
+.question {
+    border-bottom: 1px solid #dbdef0;
+    width: 80vw;
+    padding-bottom: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+label {
+    border: 1px solid #293264;
+    border-radius: 1em;
+    padding: 0.5em 1.5em;
+}
+
+.input-selected {
+    background: #d6dbf5;
+}
+
+/* Scoring */
+
+.grey-text {
+    color: #23293264;
+    border: 1px solid rgba(35, 41, 50, 0.39);
+}
+
+.correct,
+.wrong {
+    border: none;
+}
+
+.wrong {
+    background: #f8bcbc;
+}
+
+.correct {
+    background: #94d7a2;
+}
+
+/* TYPESETTING */
+
+.question h3 {
+    width: 100%;
+}

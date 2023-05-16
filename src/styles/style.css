@@ -7,56 +7,6 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-section {
-    margin: 40vh;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4em;
-}
-
-.question {
-    border-bottom: 1px solid #dbdef0;
-    width: 80vw;
-    padding-bottom: 1.2em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-}
-
-.question h3 {
-    width: 100%;
-}
-
-input[type="radio"] {
-    -webkit-appearance: none;
-}
-
-label {
-    border: 1px solid #293264;
-    border-radius: 1em;
-    padding: 0.5em 1.5em;
-}
-
-label:has(input[type="radio"]:checked) {
-    background: #d6dbf5;
-}
-
-.score-screen {
-    margin: 1em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-}
-
 /* TYPESETTING */
 
 h1,
@@ -92,34 +42,7 @@ label {
     font-size: 1.2rem;
 }
 
-/* Buttons */
-
-button {
-    background: #4d5b9e;
-    border: none;
-    padding: 1em 3em;
-    color: white;
-    border-radius: 1em;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-}
-
-section button {
-    margin-top: 1.5em;
-}
-
-.restart-btn {
-    display: inline-block;
-    padding: 0.7em 2em;
-    border-radius: 0.8em;
-    font-size: 0.9rem;
-}
-
-button:disabled {
-    cursor: not-allowed;
-}
-
-/* Background */
+/* BACKGROUND */
 
 .yellow-blob-intro,
 .blue-blob-intro,
@@ -149,24 +72,4 @@ button:disabled {
     left: -30px;
     bottom: -30px;
     width: 20%;
-}
-
-/* Valuation */
-
-.grey-text {
-    color: #23293264;
-    border: 1px solid rgba(35, 41, 50, 0.39);
-}
-
-.correct,
-.wrong {
-    border: none;
-}
-
-.wrong {
-    background: #f8bcbc !important;
-}
-
-.correct {
-    background: #94d7a2 !important;
 }

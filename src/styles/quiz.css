@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: 4em 0 2em 0;
+}
+
+.score-screen {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.loading-text {
+    margin-top: 40vh;
+}
+
+/* BUTTONS */
+
+button {
+    background: #4d5b9e;
+    border: none;
+    padding: 1em 3em;
+    color: white;
+    border-radius: 1em;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+.restart-btn {
+    display: inline-block;
+    padding: 0.7em 2em;
+    border-radius: 0.8em;
+    font-size: 0.9rem;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}

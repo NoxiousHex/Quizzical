@@ -20,7 +20,6 @@ export default function App() {
         shuffleArray(arr);
     }
 
-    console.log("app rerendered");
     return isRunning ? (
         <Quiz setAnswerArr={setAnswerArr} answerArr={answerArr} />
     ) : (

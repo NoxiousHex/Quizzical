@@ -1,0 +1,11 @@
+.intro-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40vh auto 0;
+}
+
+.intro-screen button {
+    margin-top: 1.5em;
+}
