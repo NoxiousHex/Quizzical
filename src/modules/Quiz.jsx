@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import Question from "./Question";
 import he from "he";
+import "../styles/quiz.css";
 
 export default function Quiz(props) {
+    const { answerArr, setAnswerArr } = props;
     const [finished, setFinished] = useState(false);
     const [quiz, setQuiz] = useState([]);
     const [answers, setAnswers] = useState([]);
@@ -24,7 +26,7 @@ export default function Quiz(props) {
     }, []);
 
     useEffect(() => {
-        props.setAnswerArr(
+        setAnswerArr(
             quiz.map((q) => [q.correct_answer, ...q.incorrect_answers])
         );
     }, [quiz]);
@@ -62,13 +64,6 @@ export default function Quiz(props) {
         }
     }
 
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-
     const renderQuiz = quiz.map((q, i) => {
         const id = uuid();
         return (
@@ -77,7 +72,7 @@ export default function Quiz(props) {
                 addAnswer={addAnswer}
                 number={i + 1}
                 question={q.question}
-                answerArr={props.answerArr[i]}
+                answerArr={answerArr[i]}
                 answers={answers}
                 finished={finished}
             />
@@ -89,8 +84,9 @@ export default function Quiz(props) {
     function toggleGame() {
         setFinished((prevFinished) => !prevFinished);
         if (finished === true) {
-            getQuizData();
+            setAnswerArr([]);
             setAnswers([]);
+            getQuizData();
         }
     }
 
@@ -107,14 +103,23 @@ export default function Quiz(props) {
         </button>
     );
 
+    const quizEl =
+        answerArr?.length > 0 ? (
+            <>
+                {renderQuiz}
+                {endBtn}
+            </>
+        ) : (
+            <h2 className="loading-text">Loading...</h2>
+        );
+
     return (
         <main>
             <img
                 src="../src/assets/YellowBlob.png"
                 className="yellow-blob-quiz"
             />
-            {renderQuiz}
-            {endBtn}
+            {quizEl}
             <img src="../src/assets/BlueBlob.png" className="blue-blob-quiz" />
         </main>
     );
