@@ -116,11 +116,11 @@ export default function Quiz(props) {
     return (
         <main>
             <img
-                src="../src/assets/YellowBlob.png"
+                src="../YellowBlob.png"
                 className="yellow-blob-quiz"
             />
             {quizEl}
-            <img src="../src/assets/BlueBlob.png" className="blue-blob-quiz" />
+            <img src="../BlueBlob.png" className="blue-blob-quiz" />
         </main>
     );
 }
